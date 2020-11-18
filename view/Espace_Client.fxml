@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #3d3d3D;" stylesheets="@app.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Espace_Client_Controller">
+   <children>
+      <Label fx:id="credit_Client" alignment="CENTER" layoutX="3.0" prefHeight="42.0" prefWidth="417.0" styleClass="text_police" text="Credit" textFill="#3a7ad6">
+         <font>
+            <Font size="26.0" />
+         </font>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" spread="0.75" />
+         </effect>
+      </Label>
+      <ListView fx:id="List_DVD_Louer" layoutX="430.0" layoutY="46.0" onMouseClicked="#Reservation_Click" prefHeight="162.0" prefWidth="165.0" />
+      <Label alignment="CENTER" layoutX="426.0" prefHeight="42.0" prefWidth="173.0" styleClass="text_police" text="Mes DVDS" textFill="#3a7ad6">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" spread="0.75" />
+         </effect>
+      </Label>
+      <AnchorPane layoutX="6.0" layoutY="131.0" prefHeight="172.0" prefWidth="406.0">
+         <children>
+            <Button fx:id="Historique" layoutX="269.0" layoutY="214.0" mnemonicParsing="false" onAction="#check_Historique" prefHeight="52.0" prefWidth="137.0" text="Historique" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="record-sales" />
+                  <String fx:value="record-blue" />
+               </styleClass>
+            </Button>
+            <Button fx:id="Recharger" layoutX="125.0" layoutY="214.0" mnemonicParsing="false" onAction="#click_Recharger" prefHeight="52.0" prefWidth="137.0" text="Recharger" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="record-sales" />
+                  <String fx:value="record-blue" />
+               </styleClass>
+            </Button>
+            <TextField fx:id="Credit_input" layoutX="-2.0" layoutY="215.0" prefHeight="50.0" prefWidth="116.0" promptText="Credit" />
+            <TableView fx:id="List_DVD" layoutX="-2.0" layoutY="-42.0" onMouseClicked="#list_Click" prefHeight="243.0" prefWidth="417.0">
+               <columns>
+                  <TableColumn fx:id="Table_Title" maxWidth="300.0" prefWidth="119.0" text="title" />
+                  <TableColumn fx:id="Table_Genre" maxWidth="300.0" prefWidth="97.0" text="genre" />
+                  <TableColumn fx:id="Table_ReleaseDate" prefWidth="106.0" text="releaseDate" />
+                  <TableColumn fx:id="Table_Producer" prefWidth="94.0" text="producer" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <Label fx:id="Info_Client" alignment="CENTER" layoutX="5.0" layoutY="29.0" prefHeight="52.0" prefWidth="417.0" styleClass="text_police" text="Info Client" textFill="#3a7ad6">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" spread="0.75" />
+         </effect>
+      </Label>
+      <Button layoutX="433.0" layoutY="284.0" mnemonicParsing="false" onAction="#Rendre_DVD" prefHeight="52.0" prefWidth="160.0" styleClass="record-sales" text="Rendre DVD" />
+      <Button layoutX="542.0" layoutY="342.0" mnemonicParsing="false" onAction="#clickQuitter" prefHeight="52.0" prefWidth="51.0" textAlignment="CENTER">
+         <font>
+            <Font size="21.0" />
+         </font>
+         <styleClass>
+            <String fx:value="record-sales" />
+            <String fx:value="record-blue" />
+         </styleClass>
+         <graphic>
+            <ImageView fitHeight="29.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Ressources/quit.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="return_btn" layoutX="478.0" layoutY="342.0" mnemonicParsing="false" onAction="#return_click" prefHeight="52.0" prefWidth="51.0" textAlignment="CENTER">
+         <styleClass>
+            <String fx:value="record-sales" />
+            <String fx:value="record-blue" />
+         </styleClass>
+         <font>
+            <Font size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Ressources/return.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TextField fx:id="Signalement" layoutX="430.0" layoutY="224.0" prefHeight="50.0" prefWidth="165.0" promptText="Signalement" />
+   </children>
+</AnchorPane>
